@@ -41,33 +41,33 @@ contoh :
 }
 ```
 
-## Cara Menjalankan Program
+# Cara Menjalankan Program
   "python main.py --scenario all --dataset all"
   -> Perintah ini akan memproses semua file JSON sekaligus, mengeksekusi perhitungan rute, dan menampilkan perbandingan biayanya
 
-## Pemilihan Algoritma
+# Pemilihan Algoritma
 Program ini mengimplementasikan dua algoritma untuk memecahkan Travelling Salesperson Problem (TSP) dengan pertimbangan bobot muatan:
-**`Algoritma Heuristik (Greedy): Dipilih karena kecepatannya. Algoritma ini mencari titik terdekat selanjutnya dari titik saat ini (Nearest Neighbour).`**
+##Algoritma Heuristik (Greedy): Dipilih karena kecepatannya. Algoritma ini mencari titik terdekat selanjutnya dari titik saat ini (Nearest Neighbour).
   - Trade-off: Keunggulannya adalah waktu komputasi yang instan (kurang dari $0.05$ ms). Namun, karena bersifat miopia (hanya melihat keuntungan jangka pendek), algoritma ini rawan terjebak pada Greedy Trap di mana jarak pendek di awal memaksanya mengambil rute memutar yang sangat panjang di akhir, serta kurang optimal mendistribusikan beban paket berat.
-**`Algoritma Eksak (Branch and Bound dengan DFS): Dipilih karena memberikan jaminan hasil yang 100% optimal dengan rute keseluruhan terpendek dan pertimbangan konsumsi BBM paling hemat.`**
+##Algoritma Eksak (Branch and Bound dengan DFS): Dipilih karena memberikan jaminan hasil yang 100% optimal dengan rute keseluruhan terpendek dan pertimbangan konsumsi BBM paling hemat.
   - Trade-off: Memiliki Total Cost rute paling murah, tetapi mengorbankan biaya komputasi yang luar biasa besar (tercatat melonjak hingga di atas $300$ ms untuk 11 lokasi). Biaya server komputasi meningkat drastis seiring bertambahnya titik lokasi.
 
-## Analisis Kompleksitas
-**`Algoritma Eksak (Branch and Bound DFS)`**
+# Analisis Kompleksitas
+##Algoritma Eksak (Branch and Bound DFS)
 - Kompleksitas Waktu: O(N!)
   Penjelasan: Menggunakan penelusuran Depth First Search (DFS), fungsi rekursif akan mencoba seluruh permutasi rute yang mungkin. Walaupun terdapat mekanisme pruning (memotong cabang rekursi jika current_fuel_cost >= best_fuel_cost), pada kasus terburuk (worst-case) di mana semua cabang harus diperiksa, waktu komputasi tetap akan bertumbuh secara faktorial terhadap jumlah lokasi (N).
 
 - Kompleksitas Ruang: O(N)
   Penjelasan: Memori tambahan dialokasikan murni untuk call stack akibat rekursi dengan kedalaman maksimal N, serta dua buah array/list (visited dan current_route) yang berukuran N.
 
-**`Algoritma Heuristik (Greedy)`**
+##Algoritma Heuristik (Greedy)
 - Kompleksitas Waktu: O(N^2)
   Penjelasan: Terdapat nested loop pada fungsi greedy_tsp. Loop luar berjalan sebanyak N-1 kali untuk menentukan titik selanjutnya, sedangkan loop dalam melakukan iterasi sebanyak N kali untuk menyeleksi jarak minimum dari lokasi saat ini.
 
 - Kompleksitas Ruang: O(N)
   Penjelasan: Kompleksitas memori sangat efisien. Tidak ada rekursi yang menumpuk di memori; algoritma hanya memerlukan array satu dimensi visited dan route untuk menyimpan urutan berukuran konstan N.
 
-## Kesimpulan
+# Kesimpulan
 Dalam menentukan algoritma terbaik secara bisnis, kita menghitung Total Cost of Ownership (TCO) yang merupakan akumulasi dari biaya BBM ditambah biaya server komputasi (ditetapkan sebesar 50 Rupiah per millisecond eksekusi).
 Titik impas (Break-Even Point/BEP) harga bensin—di mana Algoritma Eksak mulai lebih menguntungkan—sangat fluktuatif tergantung distribusi lokasi dan bobot:
   - Pada Dataset Normal (penyebaran merata), penghematan BBM dari Algoritma Eksak kecil (karena jarak rute hampir mirip), sementara lonjakan biaya komputasinya tinggi. Titik Break-Even baru tercapai ketika harga BBM menyentuh Rp 41.055 / liter. Di bawah harga ini, algoritma Heuristik jauh lebih untung.
