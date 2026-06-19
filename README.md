@@ -47,20 +47,20 @@ contoh :
 
 # Pemilihan Algoritma
 Program ini mengimplementasikan dua algoritma untuk memecahkan Travelling Salesperson Problem (TSP) dengan pertimbangan bobot muatan:
-##Algoritma Heuristik (Greedy): Dipilih karena kecepatannya. Algoritma ini mencari titik terdekat selanjutnya dari titik saat ini (Nearest Neighbour).
+## Algoritma Heuristik (Greedy): Dipilih karena kecepatannya. Algoritma ini mencari titik terdekat selanjutnya dari titik saat ini (Nearest Neighbour).
   - Trade-off: Keunggulannya adalah waktu komputasi yang instan (kurang dari $0.05$ ms). Namun, karena bersifat miopia (hanya melihat keuntungan jangka pendek), algoritma ini rawan terjebak pada Greedy Trap di mana jarak pendek di awal memaksanya mengambil rute memutar yang sangat panjang di akhir, serta kurang optimal mendistribusikan beban paket berat.
-##Algoritma Eksak (Branch and Bound dengan DFS): Dipilih karena memberikan jaminan hasil yang 100% optimal dengan rute keseluruhan terpendek dan pertimbangan konsumsi BBM paling hemat.
+## Algoritma Eksak (Branch and Bound dengan DFS): Dipilih karena memberikan jaminan hasil yang 100% optimal dengan rute keseluruhan terpendek dan pertimbangan konsumsi BBM paling hemat.
   - Trade-off: Memiliki Total Cost rute paling murah, tetapi mengorbankan biaya komputasi yang luar biasa besar (tercatat melonjak hingga di atas $300$ ms untuk 11 lokasi). Biaya server komputasi meningkat drastis seiring bertambahnya titik lokasi.
 
 # Analisis Kompleksitas
-##Algoritma Eksak (Branch and Bound DFS)
+## Algoritma Eksak (Branch and Bound DFS)
 - Kompleksitas Waktu: O(N!)
   Penjelasan: Menggunakan penelusuran Depth First Search (DFS), fungsi rekursif akan mencoba seluruh permutasi rute yang mungkin. Walaupun terdapat mekanisme pruning (memotong cabang rekursi jika current_fuel_cost >= best_fuel_cost), pada kasus terburuk (worst-case) di mana semua cabang harus diperiksa, waktu komputasi tetap akan bertumbuh secara faktorial terhadap jumlah lokasi (N).
 
 - Kompleksitas Ruang: O(N)
   Penjelasan: Memori tambahan dialokasikan murni untuk call stack akibat rekursi dengan kedalaman maksimal N, serta dua buah array/list (visited dan current_route) yang berukuran N.
 
-##Algoritma Heuristik (Greedy)
+## Algoritma Heuristik (Greedy)
 - Kompleksitas Waktu: O(N^2)
   Penjelasan: Terdapat nested loop pada fungsi greedy_tsp. Loop luar berjalan sebanyak N-1 kali untuk menentukan titik selanjutnya, sedangkan loop dalam melakukan iterasi sebanyak N kali untuk menyeleksi jarak minimum dari lokasi saat ini.
 
