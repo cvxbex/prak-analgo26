@@ -42,7 +42,7 @@ contoh :
 ```
 
 ## Cara Menjalankan Program
-  python main.py --scenario all --dataset all
+  "python main.py --scenario all --dataset all"
   -> Perintah ini akan memproses semua file JSON sekaligus, mengeksekusi perhitungan rute, dan menampilkan perbandingan biayanya
 
 ## Pemilihan Algoritma
