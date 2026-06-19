@@ -1,8 +1,8 @@
 {
   "description": "Dataset Normal: Distribusi pelanggan dan bobot merata",
   "locations": [
-    "Hub Pusat", "Cust 1", "Cust 2", "Cust 3", "Cust 4", "Cust 5", 
-    "Cust 6", "Cust 7", "Cust 8", "Cust 9", "Cust 10"
+    "Hub Pusat Gedebage", "Jatinangor", "Cileunyi", "Cibiru", "Tanjungsari",
+    "Ujung Berung", "Rancaekek", "Antapani", "Pamulihan", "Buah Batu", "Sumedang Selatan"
   ],
   "package_weights": [
     0, 2.5, 1.0, 3.0, 1.5, 5.0, 2.0, 1.2, 4.0, 3.5, 2.2
