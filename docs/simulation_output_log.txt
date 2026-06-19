@@ -1,0 +1,177 @@
+>>> MEMPROSES DATASET: greedyTrap.json <<<
+
+============================================================
+MENJALANKAN SKENARIO: SUBSIDI (Harga BBM: Rp 5000/liter)
+DATASET: Dataset Countercase (Greedy Trap): Jarak terdekat awal akan menjebak Greedy ke jalur panjang di akhir
+============================================================
+
+[ALGORITMA A - HEURISTIK (GREEDY)]
+Urutan Rute:
+Hub Pusat -> Trap 1 -> Trap 2 -> Trap 3 -> Trap 4 -> Trap 5 -> Safe 1 -> Safe 2 -> Safe 3 -> Safe 4 -> Safe 5 -> Hub Pusat
+Jarak Tempuh Murni    : 69.00 km
+Waktu Eksekusi        : 0.0255 ms
+Biaya BBM             : Rp 11,400.00
+Biaya Komputasi       : Rp 1.27
+TCO (Total Cost)      : Rp 11,401.27
+
+[ALGORITMA B - EKSAK (DFS PRUNING)]
+Urutan Rute:
+Hub Pusat -> Trap 1 -> Trap 2 -> Trap 3 -> Trap 4 -> Trap 5 -> Safe 5 -> Safe 4 -> Safe 3 -> Safe 2 -> Safe 1 -> Hub Pusat
+Jarak Tempuh Murni    : 65.00 km
+Waktu Eksekusi        : 4.3976 ms
+Biaya BBM             : Rp 11,000.00
+Biaya Komputasi       : Rp 219.88
+TCO (Total Cost)      : Rp 11,219.88
+
+============================================================
+KESIMPULAN SKENARIO
+Selisih TCO: Rp 181.39
+-> REKOMENDASI: Gunakan Algoritma Eksak (Lebih hemat Rp 181.39)
+
+============================================================
+MENJALANKAN SKENARIO: KRISIS (Harga BBM: Rp 20000/liter)
+DATASET: Dataset Countercase (Greedy Trap): Jarak terdekat awal akan menjebak Greedy ke jalur panjang di akhir
+============================================================
+
+[ALGORITMA A - HEURISTIK (GREEDY)]
+Urutan Rute:
+Hub Pusat -> Trap 1 -> Trap 2 -> Trap 3 -> Trap 4 -> Trap 5 -> Safe 1 -> Safe 2 -> Safe 3 -> Safe 4 -> Safe 5 -> Hub Pusat
+Jarak Tempuh Murni    : 69.00 km
+Waktu Eksekusi        : 0.0140 ms
+Biaya BBM             : Rp 45,600.00
+Biaya Komputasi       : Rp 0.70
+TCO (Total Cost)      : Rp 45,600.70
+
+[ALGORITMA B - EKSAK (DFS PRUNING)]
+Urutan Rute:
+Hub Pusat -> Trap 1 -> Trap 2 -> Trap 3 -> Trap 4 -> Trap 5 -> Safe 5 -> Safe 4 -> Safe 3 -> Safe 2 -> Safe 1 -> Hub Pusat
+Jarak Tempuh Murni    : 65.00 km
+Waktu Eksekusi        : 5.0048 ms
+Biaya BBM             : Rp 44,000.00
+Biaya Komputasi       : Rp 250.24
+TCO (Total Cost)      : Rp 44,250.24
+
+============================================================
+KESIMPULAN SKENARIO
+Selisih TCO: Rp 1,350.46
+-> REKOMENDASI: Gunakan Algoritma Eksak (Lebih hemat Rp 1,350.46)
+
+********************************************************************************
+
+>>> MEMPROSES DATASET: heavyLoads.json <<<
+
+============================================================
+MENJALANKAN SKENARIO: SUBSIDI (Harga BBM: Rp 5000/liter)
+DATASET: Dataset Beban Berat: Beban paket sangat besar di beberapa titik memengaruhi kalkulasi bensin secara ekstrem
+============================================================
+
+[ALGORITMA A - HEURISTIK (GREEDY)]
+Urutan Rute:
+Hub Pusat Gedebage -> Cibiru - berat -> Ujung Berung - ringan -> Antapani - sedang -> Buah Batu - jauh -> Cileunyi - berat -> Jatinangor - berat -> Rancaekek - ringan -> Tanjungsari - ringan -> Pamulihan - sedaang -> Sumedang Selatan - jauh -> Hub Pusat Gedebage
+Jarak Tempuh Murni    : 118.00 km
+Waktu Eksekusi        : 0.0423 ms
+Biaya BBM             : Rp 16,229.94
+Biaya Komputasi       : Rp 2.11
+TCO (Total Cost)      : Rp 16,232.06
+
+[ALGORITMA B - EKSAK (DFS PRUNING)]
+Urutan Rute:
+Hub Pusat Gedebage -> Cibiru - berat -> Cileunyi - berat -> Rancaekek - ringan -> Jatinangor - berat -> Pamulihan - sedaang -> Sumedang Selatan - jauh -> Tanjungsari - ringan -> Ujung Berung - ringan -> Antapani - sedang -> Buah Batu - jauh -> Hub Pusat Gedebage
+Jarak Tempuh Murni    : 102.50 km
+Waktu Eksekusi        : 141.8236 ms
+Biaya BBM             : Rp 12,751.95
+Biaya Komputasi       : Rp 7,091.18
+TCO (Total Cost)      : Rp 19,843.13
+
+============================================================
+KESIMPULAN SKENARIO
+Selisih TCO: Rp 3,611.07
+-> REKOMENDASI: Gunakan Algoritma Heuristik (Lebih hemat Rp 3,611.07)
+
+============================================================
+MENJALANKAN SKENARIO: KRISIS (Harga BBM: Rp 20000/liter)
+DATASET: Dataset Beban Berat: Beban paket sangat besar di beberapa titik memengaruhi kalkulasi bensin secara ekstrem
+============================================================
+
+[ALGORITMA A - HEURISTIK (GREEDY)]
+Urutan Rute:
+Hub Pusat Gedebage -> Cibiru - berat -> Ujung Berung - ringan -> Antapani - sedang -> Buah Batu - jauh -> Cileunyi - berat -> Jatinangor - berat -> Rancaekek - ringan -> Tanjungsari - ringan -> Pamulihan - sedaang -> Sumedang Selatan - jauh -> Hub Pusat Gedebage
+Jarak Tempuh Murni    : 118.00 km
+Waktu Eksekusi        : 0.0183 ms
+Biaya BBM             : Rp 64,919.76
+Biaya Komputasi       : Rp 0.91
+TCO (Total Cost)      : Rp 64,920.68
+
+[ALGORITMA B - EKSAK (DFS PRUNING)]
+Urutan Rute:
+Hub Pusat Gedebage -> Cibiru - berat -> Cileunyi - berat -> Rancaekek - ringan -> Jatinangor - berat -> Pamulihan - sedaang -> Sumedang Selatan - jauh -> Tanjungsari - ringan -> Ujung Berung - ringan -> Antapani - sedang -> Buah Batu - jauh -> Hub Pusat Gedebage
+Jarak Tempuh Murni    : 102.50 km
+Waktu Eksekusi        : 147.9651 ms
+Biaya BBM             : Rp 51,007.78
+Biaya Komputasi       : Rp 7,398.26
+TCO (Total Cost)      : Rp 58,406.04
+
+============================================================
+KESIMPULAN SKENARIO
+Selisih TCO: Rp 6,514.64
+-> REKOMENDASI: Gunakan Algoritma Eksak (Lebih hemat Rp 6,514.64)
+
+********************************************************************************
+
+>>> MEMPROSES DATASET: locate.json <<<
+
+============================================================
+MENJALANKAN SKENARIO: SUBSIDI (Harga BBM: Rp 5000/liter)
+DATASET: Dataset Normal: Distribusi pelanggan dan bobot merata
+============================================================
+
+[ALGORITMA A - HEURISTIK (GREEDY)]
+Urutan Rute:
+Hub Pusat Gedebage -> Cibiru -> Ujung Berung -> Antapani -> Buah Batu -> Cileunyi -> Jatinangor -> Rancaekek -> Tanjungsari -> Pamulihan -> Sumedang Selatan -> Hub Pusat Gedebage
+Jarak Tempuh Murni    : 118.00 km
+Waktu Eksekusi        : 0.0236 ms
+Biaya BBM             : Rp 17,325.39
+Biaya Komputasi       : Rp 1.18
+TCO (Total Cost)      : Rp 17,326.57
+
+[ALGORITMA B - EKSAK (DFS PRUNING)]
+Urutan Rute:
+Hub Pusat Gedebage -> Buah Batu -> Antapani -> Ujung Berung -> Cibiru -> Cileunyi -> Rancaekek -> Jatinangor -> Tanjungsari -> Pamulihan -> Sumedang Selatan -> Hub Pusat Gedebage
+Jarak Tempuh Murni    : 105.00 km
+Waktu Eksekusi        : 286.5069 ms
+Biaya BBM             : Rp 15,580.89
+Biaya Komputasi       : Rp 14,325.34
+TCO (Total Cost)      : Rp 29,906.23
+
+============================================================
+KESIMPULAN SKENARIO
+Selisih TCO: Rp 12,579.67
+-> REKOMENDASI: Gunakan Algoritma Heuristik (Lebih hemat Rp 12,579.67)
+
+============================================================
+MENJALANKAN SKENARIO: KRISIS (Harga BBM: Rp 20000/liter)
+DATASET: Dataset Normal: Distribusi pelanggan dan bobot merata
+============================================================
+
+[ALGORITMA A - HEURISTIK (GREEDY)]
+Urutan Rute:
+Hub Pusat Gedebage -> Cibiru -> Ujung Berung -> Antapani -> Buah Batu -> Cileunyi -> Jatinangor -> Rancaekek -> Tanjungsari -> Pamulihan -> Sumedang Selatan -> Hub Pusat Gedebage
+Jarak Tempuh Murni    : 118.00 km
+Waktu Eksekusi        : 0.0252 ms
+Biaya BBM             : Rp 69,301.54
+Biaya Komputasi       : Rp 1.26
+TCO (Total Cost)      : Rp 69,302.80
+
+[ALGORITMA B - EKSAK (DFS PRUNING)]
+Urutan Rute:
+Hub Pusat Gedebage -> Buah Batu -> Antapani -> Ujung Berung -> Cibiru -> Cileunyi -> Rancaekek -> Jatinangor -> Tanjungsari -> Pamulihan -> Sumedang Selatan -> Hub Pusat Gedebage
+Jarak Tempuh Murni    : 105.00 km
+Waktu Eksekusi        : 328.6766 ms
+Biaya BBM             : Rp 62,323.55
+Biaya Komputasi       : Rp 16,433.83
+TCO (Total Cost)      : Rp 78,757.38
+
+============================================================
+KESIMPULAN SKENARIO
+Selisih TCO: Rp 9,454.58
+-> REKOMENDASI: Gunakan Algoritma Heuristik (Lebih hemat Rp 9,454.58)
